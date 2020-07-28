@@ -60,26 +60,60 @@ public class Controller implements Initializable {
     @FXML
     private Text textout;
 
-    int Combat(int a0,int at,int b0, int Bt, int E) {
+    long Combat(long a0,long at, double E){
+        long res= (long)E*(a0-at);
+        return res;
+    }
 
-        return 0;
+    double kpd(int k){
+        return (1-((int) (Math.random() * (k - k*0.63) + k*0.63))*0.01);
     }
 
     @FXML
     void click(ActionEvent event) {
         int humanFactor = (int)slider.getValue();
-        int kpd = (int) (Math.random() * (humanFactor - humanFactor*0.63) + humanFactor*0.63);
-        int A0 = Integer.parseInt(A_side1.getText());
-        int At = Integer.parseInt(A_side2.getText());
-        int Ea = Integer.parseInt(A_side3.getText());
-        int B0 = Integer.parseInt(B_side1.getText());
-        int Bt = Integer.parseInt(B_side2.getText());
-        int Eb = Integer.parseInt(B_side3.getText());
+        long A0 = Long.parseLong(A_side1.getText());
+        long At = Long.parseLong(A_side2.getText());
+        double Ea = Double.parseDouble(A_side3.getText());
+        long B0 = Long.parseLong(B_side1.getText());
+        long Bt = Long.parseLong(B_side2.getText());
+        double Eb = Double.parseDouble(B_side3.getText());
 
-        //Combat();
+
+        humanFactor = 50;
+        A0 =1000;
+        At =950;
+        Ea =0.78;
+        B0 =2000;
+        Bt =1500;
+        Eb =0.87;
+
+
+
+        System.out.println(A0);
+        System.out.println(At);
+        System.out.println(Ea);
+        System.out.println(B0);
+        System.out.println(Bt);
+        System.out.println(Eb);
+        System.out.println("========================================\n");
+
+        double E1,E2;
+
+        while(At>0 || Bt>0){
+
+            E1=(Ea*kpd(humanFactor))/(Eb*kpd(humanFactor));
+            E2=(Eb*kpd(humanFactor))/(Ea*kpd(humanFactor));
+
+            At=A0-Combat(B0,Bt,E2);
+            Bt=B0-Combat(A0,At,E1);
+
+            System.out.println(At);
+            System.out.println(Bt);
+        }
     }
 
-    //граф
+
     @FXML
     private LineChart<?, ?> lineChart;
 
@@ -113,6 +147,5 @@ public class Controller implements Initializable {
             series2.getData().add(new XYChart.Data(str,B_array[i-1]));
         }
         lineChart.getData().addAll(series1, series2);
-
     }
 }
