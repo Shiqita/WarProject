@@ -75,7 +75,7 @@ public class Controller implements Initializable {
         int Bt = Integer.parseInt(B_side2.getText());
         int Eb = Integer.parseInt(B_side3.getText());
 
-        Combat();
+        //Combat();
     }
 
     @FXML
