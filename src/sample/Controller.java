@@ -1,6 +1,6 @@
 package sample;
 
-import java.io.IOException;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -12,6 +12,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+
 
 public class Controller implements Initializable {
 
@@ -44,7 +45,7 @@ public class Controller implements Initializable {
     private NumberTextField B_side3;
 
     @FXML
-    public Slider slider;
+    private Slider slider;
 
     @FXML
     private Button count;
@@ -52,14 +53,24 @@ public class Controller implements Initializable {
     @FXML
     private Text textout;
 
+    int Combat(int a0,int at,int b0, int Bt, int E){
+
+        return kek;
+    }
 
     @FXML
     void click(ActionEvent event) {
         int humanFactor = (int)slider.getValue();
-      //  int nextInt(int n);
-      //  Random();
-    }
+        int kpd = (int) (Math.random() * (humanFactor - humanFactor*0.63) + humanFactor*0.63);
+        int A0 = Integer.parseInt(A_side1.getText());
+        int At = Integer.parseInt(A_side2.getText());
+        int Ea = Integer.parseInt(A_side3.getText());
+        int B0 = Integer.parseInt(B_side1.getText());
+        int Bt = Integer.parseInt(B_side2.getText());
+        int Eb = Integer.parseInt(B_side3.getText());
 
+        Combat();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
