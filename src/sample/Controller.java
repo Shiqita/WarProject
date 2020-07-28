@@ -82,11 +82,11 @@ public class Controller implements Initializable {
 
         humanFactor = 50;
         A0 =1000;
-        At =950;
-        Ea =0.78;
+        At =750;
+        Ea =0.98;
         B0 =2000;
         Bt =1500;
-        Eb =0.87;
+        Eb =0.97;
 
 
 
@@ -98,18 +98,28 @@ public class Controller implements Initializable {
         System.out.println(Eb);
         System.out.println("========================================\n");
 
-        double E1,E2;
+        double E1,E2,K1,K2;
+        long y;
 
         while(At>0 && Bt>0){
 
             E1=(Ea*kpd(humanFactor))/(Eb*kpd(humanFactor));
             E2=(Eb*kpd(humanFactor))/(Ea*kpd(humanFactor));
 
-            At=A0-(long)(E2*(B0-Bt));
-            Bt=B0-(long)(E1*(A0-At));
+                y=At;
 
-            System.out.println(At+"    At");
-            System.out.println(Bt+"    Bt");
+                At=A0-(long)(E2*(B0));
+                Bt=B0-(long)(E1*(A0));
+
+                System.out.println(At+"    At");
+                System.out.println(Bt+"    Bt");
+                System.out.println("++++++++++++++++++++++++\n");
+
+                A0=At;
+                B0=Bt;
+
+                System.out.println(At+"    At");
+                System.out.println(Bt+"    Bt");
         }
     }
 
