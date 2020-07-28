@@ -108,8 +108,8 @@ public class Controller implements Initializable {
 
                 y=At;
 
-                At=A0-(long)(E2*(B0));
-                Bt=B0-(long)(E1*(A0));
+                At=A0-(long)(E2*(Bt));
+                Bt=B0-(long)(E1*(At));
 
                 System.out.println(At+"    At");
                 System.out.println(Bt+"    Bt");
