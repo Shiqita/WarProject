@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.chart.LineChart;
+//библиотеки для графа
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
@@ -78,6 +79,7 @@ public class Controller implements Initializable {
         //Combat();
     }
 
+    //граф
     @FXML
     private LineChart<?, ?> lineChart;
 
