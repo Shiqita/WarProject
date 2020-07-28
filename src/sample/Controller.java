@@ -111,5 +111,6 @@ public class Controller implements Initializable {
             series2.getData().add(new XYChart.Data(str,B_array[i-1]));
         }
         lineChart.getData().addAll(series1, series2);
+
     }
 }
