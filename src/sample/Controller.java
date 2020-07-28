@@ -12,6 +12,12 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+
+
 
 
 public class Controller implements Initializable {
@@ -53,9 +59,9 @@ public class Controller implements Initializable {
     @FXML
     private Text textout;
 
-    int Combat(int a0,int at,int b0, int Bt, int E){
+    int Combat(int a0,int at,int b0, int Bt, int E) {
 
-        return kek;
+        return 0;
     }
 
     @FXML
@@ -72,8 +78,38 @@ public class Controller implements Initializable {
         Combat();
     }
 
+    @FXML
+    private LineChart<?, ?> lineChart;
+
+    @FXML
+    private CategoryAxis x;
+
+    @FXML
+    private NumberAxis y;
+
+    //переменные для графика
+    private int MaxYear;
+    private int[] A_array, B_array;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //тест
+//        MaxYear = 10;
+//        A_array = new int[MaxYear];
+//        B_array = new int[MaxYear];
+//        for (int i = 0; i < 10; i++){
+//            A_array[i] = 10 + i;
+//            B_array[i] = i + 1;
+//        }
+        //конец теста
 
+        XYChart.Series series1 = new XYChart.Series();
+        XYChart.Series series2 = new XYChart.Series();
+        for (int i = 1; i < MaxYear; i++) {
+            String str = Integer.toString(i);
+            series1.getData().add(new XYChart.Data(str,A_array[i-1]));
+            series2.getData().add(new XYChart.Data(str,B_array[i-1]));
+        }
+        lineChart.getData().addAll(series1, series2);
     }
 }

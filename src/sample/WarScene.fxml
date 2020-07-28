@@ -110,7 +110,7 @@
                         <Font size="30.0" />
                      </font>
                   </Button>
-                  <LineChart GridPane.columnSpan="3" GridPane.rowIndex="7">
+                  <LineChart fx:id="lineChart" GridPane.columnSpan="3" GridPane.rowIndex="7">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
