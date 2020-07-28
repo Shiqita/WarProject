@@ -74,32 +74,32 @@
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <NumberTextField fx:id="A_side1" scaleX="0.7" scaleY="0.7" GridPane.rowIndex="1">
+                  <NumberTextField fx:id="A_side1" text="1000" scaleX="0.7" scaleY="0.7" GridPane.rowIndex="1">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </NumberTextField>
-                  <NumberTextField fx:id="A_side2" scaleX="0.7" scaleY="0.7" GridPane.rowIndex="2">
+                  <NumberTextField fx:id="A_side2" text="750" scaleX="0.7" scaleY="0.7" GridPane.rowIndex="2">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </NumberTextField>
-                  <NumberTextField fx:id="A_side3" scaleX="0.7" scaleY="0.7" GridPane.rowIndex="3">
+                  <NumberTextField fx:id="A_side3" text="0.98" scaleX="0.7" scaleY="0.7" GridPane.rowIndex="3">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </NumberTextField>
-                  <NumberTextField fx:id="B_side1" scaleX="0.7" scaleY="0.7" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <NumberTextField fx:id="B_side1" text="2000" scaleX="0.7" scaleY="0.7" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </NumberTextField>
-                  <NumberTextField fx:id="B_side2" scaleX="0.7" scaleY="0.7" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <NumberTextField fx:id="B_side2" text="1500" scaleX="0.7" scaleY="0.7" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="21.0" />
                      </font>
                   </NumberTextField>
-                  <NumberTextField fx:id="B_side3" scaleX="0.7" scaleY="0.7" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <NumberTextField fx:id="B_side3" text="0.97" scaleX="0.7" scaleY="0.7" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
                         <Font size="21.0" />
                      </font>
@@ -118,17 +118,53 @@
                       <NumberAxis side="LEFT" />
                     </yAxis>
                   </LineChart>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Результаты" textAlignment="CENTER" wrappingWidth="351.13671875" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <Text fx:id="textResTitle" strokeType="OUTSIDE" strokeWidth="0.0" text="Результат выживания войск" textAlignment="CENTER" wrappingWidth="351.13671875" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <Text fx:id="textout" strokeType="OUTSIDE" strokeWidth="0.0" translateX="100.0" wrappingWidth="966.13671875" GridPane.columnSpan="3" GridPane.rowIndex="8">
+                  <Text fx:id="textResUnder" strokeType="OUTSIDE" strokeWidth="0.0" translateX="100.0" wrappingWidth="966.13671875" GridPane.columnSpan="3" GridPane.rowIndex="8">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Text>
-               </children>
+                   <Button fx:id="clearGr"
+                           alignment="CENTER"
+                           contentDisplay="CENTER"
+                           mnemonicParsing="false"
+                           onAction="#clickClearGr"
+                           prefHeight="78.0"
+                           prefWidth="399.0"
+                           scaleX="0.6"
+                           scaleY="0.6"
+                           text="Очистить График"
+                           textAlignment="CENTER"
+                           textFill="darkred"
+                           GridPane.rowIndex="5"
+                           GridPane.columnIndex="2">
+                       <font>
+                           <Font size="30.0" />
+                       </font>
+                   </Button>
+                   <Button fx:id="clearField"
+                           alignment="CENTER"
+                           contentDisplay="CENTER"
+                           mnemonicParsing="false"
+                           onAction="#clickClearField"
+                           prefHeight="78.0"
+                           prefWidth="399.0"
+                           scaleX="0.6"
+                           scaleY="0.6"
+                           text="Очистить Поля"
+                           textAlignment="CENTER"
+                           textFill="darkred"
+                           GridPane.rowIndex="4"
+                           GridPane.columnIndex="2">
+                       <font>
+                           <Font size="30.0" />
+                       </font>
+                   </Button>
+              </children>
             </GridPane>
          </content>
       </ScrollPane>

@@ -19,7 +19,7 @@ public class Main extends Application {
         Parent content = FXMLLoader.load(getClass().getResource("WarScene.fxml"));
         Scene scene = new Scene(content, 1082, 720);
 
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Модель гражданской войны");
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setResizable(false);
