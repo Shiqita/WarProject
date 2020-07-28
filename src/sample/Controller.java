@@ -61,7 +61,7 @@ public class Controller implements Initializable {
     private Text textout;
 
     long Combat(long a0,long at, double E){
-        long res= (long)E*(a0-at);
+        long res= (long)(E*(a0-at));
         return res;
     }
 
@@ -100,16 +100,16 @@ public class Controller implements Initializable {
 
         double E1,E2;
 
-        while(At>0 || Bt>0){
+        while(At>0 && Bt>0){
 
             E1=(Ea*kpd(humanFactor))/(Eb*kpd(humanFactor));
             E2=(Eb*kpd(humanFactor))/(Ea*kpd(humanFactor));
 
-            At=A0-Combat(B0,Bt,E2);
-            Bt=B0-Combat(A0,At,E1);
+            At=A0-(long)(E2*(B0-Bt));
+            Bt=B0-(long)(E1*(A0-At));
 
-            System.out.println(At);
-            System.out.println(Bt);
+            System.out.println(At+"    At");
+            System.out.println(Bt+"    Bt");
         }
     }
 
