@@ -36,10 +36,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollBar;
 import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.chart.LineChart;
+
 //библиотеки для графа
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
@@ -109,6 +109,7 @@ public class Controller implements Initializable {
     //переменные для графика
     private int CountBattle;
     //private int[] A_array, B_array;
+
     private final long[] A_array = new long[1000];
     private final long[] B_array = new long[1000];
 
@@ -187,16 +188,16 @@ public class Controller implements Initializable {
         long wArm = 0;
         if (CountBattle != 999)
             if (A0 > B0) { wName = "A"; wArm = A0; } else
-                if (A0 < B0) { wName = "B"; wArm = B0;} //простите
+            if (A0 < B0) { wName = "B"; wArm = B0;} //простите
 
         // Вывод итога
-        textResUnder.setText("В результате посленей войны было совершено " + Integer.toString(CountBattle) + " сражений.\n" +
-                             "Победила сторона " + wName + " в количестве " + Long.toString(wArm) + " единиц.");
+        textResUnder.setText("В результате посленего конфликта было совершено " + Integer.toString(CountBattle) + " сражений,\n" +
+                "по итогу которых победила сторона " + wName +".");
 
         // Строим график
         XYChart.Series series1 = new XYChart.Series();
         XYChart.Series series2 = new XYChart.Series();
-        lineChart.setTitle("График");
+        lineChart.setTitle("Модель Ланчестера");
         series1.setName("сторона A");
         series2.setName("сторона B");
         for (int i = 0; i < CountBattle + 1; i++) {
